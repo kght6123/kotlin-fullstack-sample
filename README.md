@@ -12,6 +12,8 @@ an external SQL server. The HTTP server implementation is provided by [Jetty](ht
 To run the backend, use `./gradlew backend:run`, or open Thinkter as a project in IntelliJ IDEA and execute the shared 
 run configuration `Backend :: Jetty`. This will start serving the REST API of the backend on port 9090.
 
+`./gradlew backend:build`
+
 ## Frontend
 
 The frontend of Thinkter is built using [React](https://facebook.github.io/react/). To adapt the React APIs to Kotlin,
@@ -22,3 +24,5 @@ The project is built using webpack and the [Kotlin frontend plugin](https://gith
 
 To run the frontend, use `./gradlew frontend:run`. This will start a webpack server on port 8080. Navigate to http://localhost:8080 
 to start using the application.
+
+`./gradlew frontend:build`

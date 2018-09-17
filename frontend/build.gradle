@@ -12,7 +12,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
-    compile("org.jetbrains.kotlinx:kotlinx-html-js:$html_version")
+    compile "org.jetbrains.kotlinx:kotlinx-html-js:$html_version"
 }
 
 kotlinFrontend {
@@ -34,7 +34,7 @@ kotlinFrontend {
 
         devDependency("css-loader")
         devDependency("style-loader")
-        devDependency("babel-loader")
+        devDependency("babel-loader", "7")
         devDependency("babel-core")
         devDependency("karma")
     }
@@ -48,7 +48,7 @@ kotlinFrontend {
 
 compileKotlin2Js {
     kotlinOptions.metaInfo = true
-    kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
+    kotlinOptions.outputFile = "${project.buildDir.path}/js/${project.name}.js"
     kotlinOptions.sourceMap = true
     kotlinOptions.moduleKind = 'commonjs'
     kotlinOptions.main = "call"

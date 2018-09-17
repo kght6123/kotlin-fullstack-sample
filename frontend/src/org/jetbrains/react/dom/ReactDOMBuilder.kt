@@ -29,6 +29,8 @@ class ReactDOMBuilder : ReactBuilder(), TagConsumer<ReactElement?> {
     }
 */
 
+    override fun onTagComment(content: CharSequence): Unit {}
+
     override fun <P: RProps> createReactNode(type: Any, props: P) = Node(type, props)
 
     class DOMNode(val tagName: String) : Node<DOMProps>(tagName, DOMProps())
@@ -98,6 +100,7 @@ class ReactDOMBuilder : ReactBuilder(), TagConsumer<ReactElement?> {
     override fun finalize(): ReactElement? {
         return result()
     }
+
 }
 
 fun buildElement(handler: ReactDOMBuilder.() -> Unit) = with(ReactDOMBuilder()) {

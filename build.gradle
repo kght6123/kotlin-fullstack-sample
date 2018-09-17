@@ -3,32 +3,33 @@ version = '0.0.1-SNAPSHOT'
 
 subprojects { p ->
     p.buildscript {
-        ext.kotlin_version = "1.1.51"
-
+        ext.kotlin_version = "1.2.61"
+        ext.kotlin_frontend_version = "0.0.37"
         repositories {
             mavenLocal()
             jcenter()
-            maven { url "http://dl.bintray.com/kotlin/kotlin-eap" }
+            maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
         }
         
         dependencies {
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-            classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.23"
+            classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:$kotlin_frontend_version"
         }
     }
 }
 
 subprojects {
-    ext.kotlin_version = "1.1.51"
-    ext.html_version = "0.6.6"
-    ext.ktor_version = "0.3.0"
-    ext.squash_version = "0.2.2"
+    ext.kotlin_version = "1.2.61"
+    ext.html_version = "0.6.11"
+    ext.ktor_version = "0.9.4"
+    ext.squash_version = "0.2.4"
 
     repositories {
         mavenLocal()
         jcenter()
-        maven { url "http://dl.bintray.com/kotlin/kotlinx.html" }
-        maven { url "http://dl.bintray.com/kotlin/ktor" }
+        maven { url "https://dl.bintray.com/kotlin/kotlinx/" }
+        maven { url "https://dl.bintray.com/kotlin/kotlinx.html" }
+        maven { url "https://dl.bintray.com/kotlin/ktor" }
         maven { url "https://dl.bintray.com/kotlin/squash" }
     }
 }
